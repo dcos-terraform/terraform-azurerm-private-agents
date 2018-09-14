@@ -70,5 +70,5 @@ output "public_ips" {
 
 # Returns the ID of the prereq script
 output "prereq_id" {
-  value = "${module.dcos-bootstrap-instances.prereq_id}"
+  value = "${module.dcos-pvtagt-instances.prereq_id}"
 }
