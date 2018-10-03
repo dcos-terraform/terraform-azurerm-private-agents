@@ -1,5 +1,25 @@
 [![Build Status](https://jenkins-terraform.mesosphere.com/service/dcos-terraform-jenkins/job/dcos-terraform/job/terraform-azurerm-private-agents/job/master/badge/icon)](https://jenkins-terraform.mesosphere.com/service/dcos-terraform-jenkins/job/dcos-terraform/job/terraform-azurerm-private-agents/job/master/)
 
+# Azure DC/OS Private Agent Instances
+
+This module creates typical private agent instances
+
+## EXAMPLE
+
+```hcl
+module "dcos-private-agent-instances" {
+  source  = "dcos-terraform/private-agents/azure"
+  version = "~> 0.1"
+
+  subnet_id = "myid"
+  security_group_ids = ["sg-12345678"]"
+  public_ssh_key = "~/.ssh/id_rsa.pub"
+
+  num_private_agents = "2"
+  ...
+}
+```
+
 
 ## Inputs
 
