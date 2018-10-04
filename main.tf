@@ -1,25 +1,31 @@
 /**
  * [![Build Status](https://jenkins-terraform.mesosphere.com/service/dcos-terraform-jenkins/job/dcos-terraform/job/terraform-azurerm-private-agents/job/master/badge/icon)](https://jenkins-terraform.mesosphere.com/service/dcos-terraform-jenkins/job/dcos-terraform/job/terraform-azurerm-private-agents/job/master/)
+ * Azure DC/OS Private Agent Instances
+ * ===================================
+ *
+ * This module creates typical private agent instances
+ *
+ * EXAMPLE
+ * -------
+ *
+ *```hcl
+ *module "dcos-private-agent-instances" {
+ *  source  = "dcos-terraform/private-agents/azure"
+ *  version = "~> 0.1" 
+ *
+ *  subnet_id = "myid"
+ *  security_group_ids = ["sg-12345678"]"
+ *  public_ssh_key = "~/.ssh/id_rsa.pub"
+ *
+ *  num_private_agents = "2"
+ *  ...
+ *}
+ *```
  */
 
 provider "azurerm" {}
 
-module "pvtagt-nsg" {
-  source  = "dcos-terraform/nsg/azurerm"
-  version = "~> 0.0"
-
-  providers = {
-    azurerm = "azurerm"
-  }
-
-  dcos_role           = "agent"
-  location            = "${var.location}"
-  resource_group_name = "${var.resource_group_name}"
-  tags                = "${var.tags}"
-  name_prefix         = "${var.name_prefix}"
-}
-
-module "dcos-pvtagt-instances" {
+module "dcos-private-agents-instances" {
   source  = "dcos-terraform/instance/azurerm"
   version = "~> 0.0"
 
@@ -38,7 +44,7 @@ module "dcos-pvtagt-instances" {
   disk_type                 = "${var.disk_type}"
   disk_size                 = "${var.disk_size}"
   resource_group_name       = "${var.resource_group_name}"
-  network_security_group_id = "${module.pvtagt-nsg.nsg_id}"
+  network_security_group_id = "${var.network_security_group_id}"
   user_data                 = "${var.user_data}"
   admin_username            = "${var.admin_username}"
   public_ssh_key            = "${var.public_ssh_key}"
