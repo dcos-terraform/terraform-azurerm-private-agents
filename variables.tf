@@ -74,9 +74,8 @@ variable "admin_username" {
   description = "admin username"
 }
 
-# SSH Public Key
-variable "public_ssh_key" {
-  description = "public ssh key"
+variable "ssh_public_key" {
+  description = "SSH public key in authorized keys format (e.g. 'ssh-rsa ..') to be used with the instances. Make sure you added this key to your ssh-agent."
 }
 
 # Allow stopping for update (bool)
