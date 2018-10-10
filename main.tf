@@ -11,7 +11,7 @@
  *```hcl
  *module "dcos-private-agent-instances" {
  *  source  = "dcos-terraform/private-agents/azure"
- *  version = "~> 0.1" 
+ *  version = "~> 0.1"
  *
  *  subnet_id = "myid"
  *  security_group_ids = ["sg-12345678"]"
@@ -45,7 +45,7 @@ module "dcos-private-agents-instances" {
   disk_size                 = "${var.disk_size}"
   resource_group_name       = "${var.resource_group_name}"
   network_security_group_id = "${var.network_security_group_id}"
-  user_data                 = "${var.user_data}"
+  custom_data               = "${var.custom_data}"
   admin_username            = "${var.admin_username}"
   public_ssh_key            = "${var.public_ssh_key}"
   tags                      = "${var.tags}"
