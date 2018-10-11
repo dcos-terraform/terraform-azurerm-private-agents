@@ -35,7 +35,6 @@ module "dcos-private-agent-instances" {
 | disk_type | Disk Type to Leverage. | string | `Standard_LRS` | no |
 | hostname_format | Format the hostname inputs are index+1, region, cluster_name | string | `pvtagt-%[1]d-%[2]s` | no |
 | image | A storage_image_reference reference. | map | `<map>` | no |
-| instance_type | instance type | string | - | yes |
 | location | location | string | - | yes |
 | name_prefix | Cluster Name | string | - | yes |
 | network_security_group_id | network security group id | string | `` | no |
@@ -45,6 +44,7 @@ module "dcos-private-agent-instances" {
 | ssh_public_key | SSH public key in authorized keys format (e.g. 'ssh-rsa ..') to be used with the instances. Make sure you added this key to your ssh-agent. | string | - | yes |
 | subnet_id | Subnet ID | string | - | yes |
 | tags | Add custom tags to all resources | map | `<map>` | no |
+| vm_size | instance type | string | - | yes |
 
 ## Outputs
 

@@ -36,7 +36,7 @@ module "dcos-private-agents-instances" {
   num                       = "${var.num_private_agents}"
   location                  = "${var.location}"
   name_prefix               = "${var.name_prefix}"
-  instance_type             = "${var.instance_type}"
+  vm_size                   = "${var.vm_size}"
   dcos_version              = "${var.dcos_version}"
   dcos_instance_os          = "${var.dcos_instance_os}"
   ssh_private_key_filename  = "${var.ssh_private_key_filename}"
