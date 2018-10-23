@@ -34,9 +34,9 @@ module "dcos-private-agent-instances" {
 | disk_size | Disk Size in GB | string | - | yes |
 | disk_type | Disk Type to Leverage | string | `Standard_LRS` | no |
 | hostname_format | Format the hostname inputs are index+1, region, cluster_name | string | `pvtagt-%[1]d-%[2]s` | no |
-| image | A storage_image_reference reference. | map | `<map>` | no |
+| image | Source image to boot from | map | `<map>` | no |
 | location | Azure Region | string | - | yes |
-| name_prefix | Name of the DC/OS cluster | string | - | yes |
+| name_prefix | Cluster Name | string | - | yes |
 | network_security_group_id | Security Group Id | string | `` | no |
 | num_private_agents | Specify the amount of private agents. These agents will provide your main resources | string | - | yes |
 | resource_group_name | Name of the azure resource group | string | - | yes |

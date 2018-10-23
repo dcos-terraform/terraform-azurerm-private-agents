@@ -7,7 +7,7 @@ variable "location" {
 }
 
 variable "name_prefix" {
-  description = "Name of the DC/OS cluster"
+  description = "Cluster Name"
 }
 
 variable "vm_size" {
@@ -28,7 +28,7 @@ variable "ssh_private_key_filename" {
 }
 
 variable "image" {
-  description = "A storage_image_reference reference."
+  description = "Source image to boot from"
   type        = "map"
   default     = {}
 }
