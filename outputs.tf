@@ -1,5 +1,5 @@
 output "admin_username" {
-  description = "admin username"
+  description = "SSH User"
   value       = "${module.dcos-private-agents-instances.admin_username}"
 }
 
@@ -14,6 +14,6 @@ output "public_ips" {
 }
 
 output "prereq_id" {
-  description = "prereq id"
+  description = "Prereq id used for dependency"
   value       = "${module.dcos-private-agents-instances.prereq_id}"
 }

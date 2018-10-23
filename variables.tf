@@ -1,108 +1,85 @@
-###
-# Instance Variables
-###
-# Number of Instance
 variable "num_private_agents" {
   description = "Specify the amount of private agents. These agents will provide your main resources"
 }
 
-# Location (region)
 variable "location" {
-  description = "location"
+  description = "Azure Region"
 }
 
-# Cluster Name
 variable "name_prefix" {
   description = "Cluster Name"
 }
 
-# Instance Type
 variable "vm_size" {
-  description = "instance type"
+  description = "Azure virtual machine size"
 }
 
-# DCOS Version for prereq install
 variable "dcos_version" {
   description = "Specifies which DC/OS version instruction to use. Options: 1.9.0, 1.8.8, etc. See dcos_download_path or dcos_version tree for a full list."
 }
 
-# Tested OSes to install with prereq
 variable "dcos_instance_os" {
   description = "Operating system to use. Instead of using your own AMI you could use a provided OS."
 }
 
-# Private SSH Key Filename Optional
 variable "ssh_private_key_filename" {
   description = "Path to the SSH private key"
-
-  # cannot leave this empty as the file() interpolation will fail later on for the private_key local variable
-  # https://github.com/hashicorp/terraform/issues/15605
-  default = "/dev/null"
+  default     = "/dev/null"
 }
 
-# Source image to boot from. We assume the user has already take care of the prereq during this step.
 variable "image" {
-  description = "A storage_image_reference reference."
+  description = "Source image to boot from"
   type        = "map"
   default     = {}
 }
 
-# Disk Type to Leverage. The managed disk type. (optional)
 variable "disk_type" {
-  description = "Disk Type to Leverage."
+  description = "Disk Type to Leverage"
   default     = "Standard_LRS"
 }
 
-# Disk Size in GB
 variable "disk_size" {
-  description = "disk size"
+  description = "Disk Size in GB"
 }
 
-# Resource Group Name
 variable "resource_group_name" {
-  description = "resource group name"
+  description = "Name of the azure resource group"
 }
 
-# Customer Provided Userdata
 variable "custom_data" {
   description = "User data to be used on these instances (cloud-init)"
   default     = ""
 }
 
-# SSH User
 variable "admin_username" {
-  description = "admin username"
+  description = "SSH User"
 }
 
 variable "ssh_public_key" {
   description = "SSH public key in authorized keys format (e.g. 'ssh-rsa ..') to be used with the instances. Make sure you added this key to your ssh-agent."
 }
 
-# Allow stopping for update (bool)
 variable "allow_stopping_for_update" {
   description = "If true, allows Terraform to stop the instance to update its properties"
   default     = "true"
 }
 
-# Add special tags to the resources created by this module
 variable "tags" {
   description = "Add custom tags to all resources"
   type        = "map"
   default     = {}
 }
 
-# Format the hostname inputs are index+1, region, name_prefix
 variable "hostname_format" {
   description = "Format the hostname inputs are index+1, region, cluster_name"
   default     = "pvtagt-%[1]d-%[2]s"
 }
 
-# Subnet ID
 variable "subnet_id" {
   description = "Subnet ID"
 }
 
 variable "network_security_group_id" {
-  description = "network security group id"
+  description = "Security Group Id"
   default     = ""
 }
