@@ -13,6 +13,16 @@ output "public_ips" {
   value       = ["${module.dcos-private-agents-instances.public_ips}"]
 }
 
+output "instance_nic_ids" {
+  description = "List of instance nic ids created by this module"
+  value       = ["${module.dcos-private-agents-instances.instance_nic_ids}"]
+}
+
+output "ip_configuration_names" {
+  description = "List of instance nic ids created by this module"
+  value       = ["${module.dcos-private-agents-instances.ip_configuration_names}"]
+}
+
 output "prereq_id" {
   description = "Prereq id used for dependency"
   value       = "${module.dcos-private-agents-instances.prereq_id}"

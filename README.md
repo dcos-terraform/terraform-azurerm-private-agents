@@ -51,6 +51,8 @@ module "dcos-private-agent-instances" {
 | Name | Description |
 |------|-------------|
 | admin_username | SSH User |
+| instance_nic_ids | List of instance nic ids created by this module |
+| ip_configuration_names | List of instance nic ids created by this module |
 | prereq_id | Prereq id used for dependency |
 | private_ips | List of private ip addresses created by this module |
 | public_ips | List of public ip addresses created by this module |
