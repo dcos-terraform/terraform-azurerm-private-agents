@@ -11,7 +11,7 @@
  *```hcl
  *module "dcos-private-agent-instances" {
  *  source  = "dcos-terraform/private-agents/azure"
- *  version = "~> 0.1.0"
+ *  version = "~> 0.2.0"
  *
  *  subnet_id = "myid"
  *  security_group_ids = ["sg-12345678"]"
@@ -27,7 +27,7 @@ provider "azurerm" {}
 
 module "dcos-private-agents-instances" {
   source  = "dcos-terraform/instance/azurerm"
-  version = "~> 0.1.0"
+  version = "~> 0.2.0"
 
   providers = {
     azurerm = "azurerm"
