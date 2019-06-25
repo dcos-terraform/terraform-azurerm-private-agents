@@ -2,6 +2,10 @@ variable "num_private_agents" {
   description = "Specify the amount of private agents. These agents will provide your main resources"
 }
 
+variable "cluster_name" {
+  description = "Name of the DC/OS cluster"
+}
+
 variable "location" {
   description = "Azure Region"
 }

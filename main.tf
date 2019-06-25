@@ -35,6 +35,7 @@ module "dcos-private-agents-instances" {
 
   num                       = "${var.num_private_agents}"
   location                  = "${var.location}"
+  cluster_name              = "${var.cluster_name}"
   name_prefix               = "${var.name_prefix}"
   vm_size                   = "${var.vm_size}"
   dcos_version              = "${var.dcos_version}"
