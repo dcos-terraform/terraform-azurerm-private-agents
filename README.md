@@ -27,7 +27,7 @@ module "dcos-private-agent-instances" {
 |------|-------------|:----:|:-----:|:-----:|
 | admin\_username | SSH User | string | n/a | yes |
 | dcos\_instance\_os | Operating system to use. Instead of using your own AMI you could use a provided OS. | string | n/a | yes |
-| dcos\_version | Specifies which DC/OS version instruction to use. Options: 1.12.3, 1.11.10, etc. See dcos_download_path or dcos_version tree for a full list. | string | n/a | yes |
+| dcos\_version | Specifies which DC/OS version instruction to use. Options: 1.13.1, 1.12.3, 1.11.10, etc. See dcos_download_path or dcos_version tree for a full list. | string | n/a | yes |
 | disk\_size | Disk Size in GB | string | n/a | yes |
 | location | Azure Region | string | n/a | yes |
 | name\_prefix | Name Prefix | string | n/a | yes |
@@ -50,7 +50,6 @@ module "dcos-private-agent-instances" {
 | Name | Description |
 |------|-------------|
 | admin\_username | SSH User |
-| prereq\_id | Prereq id used for dependency |
 | private\_ips | List of private ip addresses created by this module |
 | public\_ips | List of public ip addresses created by this module |
 
