@@ -26,6 +26,7 @@ module "dcos-private-agent-instances" {
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | admin\_username | SSH User | string | n/a | yes |
+| cluster\_name | Name of the DC/OS cluster | string | n/a | yes |
 | dcos\_instance\_os | Operating system to use. Instead of using your own AMI you could use a provided OS. | string | n/a | yes |
 | dcos\_version | Specifies which DC/OS version instruction to use. Options: 1.13.1, 1.12.3, 1.11.10, etc. See dcos_download_path or dcos_version tree for a full list. | string | n/a | yes |
 | disk\_size | Disk Size in GB | string | n/a | yes |
