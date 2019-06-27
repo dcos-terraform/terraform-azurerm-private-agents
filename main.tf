@@ -47,7 +47,7 @@ module "dcos-private-agents-instances" {
   network_security_group_id = "${var.network_security_group_id}"
   custom_data               = "${var.custom_data}"
   admin_username            = "${var.admin_username}"
-  ssh_public_key            = "${var.ssh_public_key}"
+  ssh_public_key            = "${var.public_ssh_key}"
   tags                      = "${var.tags}"
   hostname_format           = "${var.hostname_format}"
   subnet_id                 = "${var.subnet_id}"
