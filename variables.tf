@@ -44,6 +44,7 @@ variable "disk_type" {
 
 variable "disk_size" {
   description = "Disk Size in GB"
+  default     = "120"
 }
 
 variable "resource_group_name" {
