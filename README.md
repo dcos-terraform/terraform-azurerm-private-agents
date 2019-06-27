@@ -30,8 +30,8 @@ module "dcos-private-agent-instances" {
 | dcos\_instance\_os | Operating system to use. Instead of using your own AMI you could use a provided OS. | string | n/a | yes |
 | location | Azure Region | string | n/a | yes |
 | num\_private\_agents | Specify the amount of private agents. These agents will provide your main resources | string | n/a | yes |
+| public\_ssh\_key | SSH Public Key | string | n/a | yes |
 | resource\_group\_name | Name of the azure resource group | string | n/a | yes |
-| ssh\_public\_key | SSH public key in authorized keys format (e.g. 'ssh-rsa ..') to be used with the instances. Make sure you added this key to your ssh-agent. | string | n/a | yes |
 | subnet\_id | Subnet ID | string | n/a | yes |
 | vm\_size | Azure virtual machine size | string | n/a | yes |
 | allow\_stopping\_for\_update | If true, allows Terraform to stop the instance to update its properties | string | `"true"` | no |
